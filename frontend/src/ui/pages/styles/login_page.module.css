@@ -1,0 +1,6 @@
+.login_page {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--c-bg);
+}

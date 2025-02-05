@@ -1,0 +1,27 @@
+:root {
+    --w-max-width: 1100px;
+}
+
+body[data-theme="t-light"] {
+    --c-bg: #fff;
+    --c-texts: #1f1f1f;
+    --c-gray: #d3d2d2;
+
+}
+
+body[data-theme="t-dark"] {
+    --c-bg: #1f1f1f;
+    --c-texts: #fff;
+    --c-gray: #cecece;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}

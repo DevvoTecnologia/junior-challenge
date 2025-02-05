@@ -1,0 +1,42 @@
+.user_container {
+    background-color: var(--c-gray);
+    width: 95%;
+    max-width: var(--w-max-width);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    overflow: hidden;
+
+    & p {
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    & .rings_container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-x: scroll;
+        gap: 30px;
+    }
+}
+
+.header_rings_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    & button {
+        padding: 8px 15px;
+        border: none;
+        background-color: var(--c-texts);
+        color: var(--c-bg);
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}
