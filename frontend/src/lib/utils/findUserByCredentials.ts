@@ -17,6 +17,7 @@ export async function findUserByCredentials(email: string, password: string) {
         }
 
         const data = await res.json()
+
         return data.user || null
 
     } catch (error) {

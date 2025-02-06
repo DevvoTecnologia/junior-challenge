@@ -11,7 +11,6 @@ import { loginAction } from "@/lib/actions/loginAction"
 import Form from "next/form"
 import { useRouter } from "@/i18n/routing"
 
-
 //
 
 export const FormLogin = () => {
@@ -25,7 +24,7 @@ export const FormLogin = () => {
         if (state?.success) {
             router.push("/dashboard" as any)
         }
-    }, [])
+    }, [state])
 
     return (
         <Form action={formAction} className={styles.form}>

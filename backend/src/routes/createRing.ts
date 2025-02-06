@@ -3,7 +3,7 @@ import { pool } from "../config/db"
 import { Ring } from "../models/ringModel"
 
 export async function createRingForUser(req: Request, res: Response): Promise<any> {
-    const { user_id, name, power, carrier, forjer, image }: Ring & { user_id: number } = req.body
+    const { email, name, power, carrier, forjer, image }: Ring & { email: string } = req.body
 
     // Definição dos limites de criação por forjador
     const forjerLimits: Record<string, number> = {
@@ -14,8 +14,8 @@ export async function createRingForUser(req: Request, res: Response): Promise<an
     }
 
     try {
-        // Verifica se o usuário existe
-        const userResult = await pool.query('SELECT * FROM users WHERE id = $1', [user_id])
+        // Verifica se o usuário existe com base no email
+        const userResult = await pool.query('SELECT * FROM users WHERE email = $1', [email])
 
         if (userResult.rows.length === 0) {
             return res.status(404).json({ message: 'Usuário não encontrado' })
@@ -46,19 +46,17 @@ export async function createRingForUser(req: Request, res: Response): Promise<an
         rings.push(newRing)
 
         // Atualiza o usuário com o novo array de anéis
-        const result = await pool.query(
+        await pool.query(
             `UPDATE users 
             SET rings = $1
-            WHERE id = $2
+            WHERE email = $2
             RETURNING *`,
-            [JSON.stringify(rings), user_id]
+            [JSON.stringify(rings), email]
         )
 
         return res.status(201).json({
             message: "Anel criado e atribuído ao usuário com sucesso",
-            user: result.rows[0]
         })
-
 
     } catch (error) {
         console.error(error)

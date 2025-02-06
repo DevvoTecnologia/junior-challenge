@@ -4,8 +4,7 @@ export async function GET() {
     try {
         const res = await fetch( `${API_URL}/api/get-users-rings`, {
             method: "GET",
-            cache: "force-cache",
-            next: { tags: [ "RINGS_DATA" ] }
+            cache: "no-store",
         })
 
         if (!res.ok) {

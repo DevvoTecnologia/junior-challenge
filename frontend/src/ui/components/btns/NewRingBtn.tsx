@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { ForjeModal } from "../modals/ForjeModal"
 
-export const NewRingBtn = () => {
+export const NewRingBtn = ({userEmail}: any) => {
     const [ isModalOpen, setIsModalOpen ] =useState<boolean>(false)
 
     function changeStateForje() {
@@ -11,7 +11,7 @@ export const NewRingBtn = () => {
     }
 
     return (<>
-        <button onClick={changeStateForje}> Forjar novo anél </button>
-        {isModalOpen && <ForjeModal onClose={changeStateForje} />}
+        <button onClick={changeStateForje}> Forjar Novo Anel </button>
+        {isModalOpen && <ForjeModal userEmail={userEmail} onClose={changeStateForje} />}
     </>)
 }

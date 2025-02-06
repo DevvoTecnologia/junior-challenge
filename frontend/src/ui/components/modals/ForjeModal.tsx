@@ -3,8 +3,9 @@ import ReactDOM from "react-dom"
 import styles from "./styles/modal_styles.module.css"
 import { useState } from "react"
 import { RiCloseLargeLine } from "react-icons/ri"
+import { FormNewRing } from "../forms/FormNewRing"
 
-export const ForjeModal = ({ onClose }: { onClose: any }) => {
+export const ForjeModal = ({ onClose, userEmail }: { onClose: any, userEmail: any }) => {
     const [isExiting, setIsExiting] = useState(false)
 
     return ReactDOM.createPortal(
@@ -29,7 +30,7 @@ export const ForjeModal = ({ onClose }: { onClose: any }) => {
                     <p>Forja de Anéis</p>
                 </div>
                 <div className={styles.container_content}>
-                    
+                    <FormNewRing userEmail={userEmail} />
                 </div>
             </div>
         </div>,

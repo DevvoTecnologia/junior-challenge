@@ -89,11 +89,11 @@ app.get("/", (req, res) => {
     `
     res.send(htmlContent)
 })
-app.get("/api/get-user-rings/:user_id", getUserRings)
+app.get("/api/get-user-rings/:user_email", getUserRings)
 app.get("/api/get-users-rings", getUsersWithRings)
 
 //DELETE
-app.delete("/api/delete-ring/:user_id/:ring_id", deleteRingById)
+app.delete("/api/delete-ring", deleteRingById)
 
 //PUT
 app.put("/api/update-ring/:user_id/:ring_id", updateRing)

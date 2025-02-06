@@ -2,31 +2,51 @@
 import styles from "./styles/dashboard_page.module.css"
 
 //
-import { auth } from "@/auth"
-import { redirect } from "@/i18n/routing"
+import { headers } from "next/headers"
 
 //
 import { SignOutBtn } from "@/ui/components/btns/SignOutBtn"
-import { cookies } from "next/headers"
 
 //
 import { RenderUserCard } from "../components/RenderUserCardDashboard"
 
-export const DashBoardPage = async () => {
-    const [session, cookieStore] = await Promise.all([auth(), cookies()])
-    const locale = cookieStore.get("NEXT_LOCALE")?.value || "pt"
+async function getServerSideData(userEmail: string | null | undefined) {
+    const headerList = await headers()
+    const host = headerList.get("host")
 
-    if (!session) {
-        return redirect({ href: "/login", locale: locale } as any)
+    if (!userEmail) {
+        return "aaaaaaaaaaaaaaa"
     }
+
+    try {
+        const res = await fetch(`http://${host}/api/get-user-ring/${userEmail}`, {
+            method: "GET",
+            cache: "no-cache"
+        })
+
+        if (!res.ok) {
+            return null
+        }
+
+        const data = await res.json()
+        return data
+
+    } catch (error) {
+        console.error("Error fetching server-side data:", error)
+        return null
+    }
+}
+
+export const DashBoardPage = async ({userEmail, userName}: any) => {
+    const ringsData = await getServerSideData(userEmail)
 
     return (
         <div className={styles.dashboard_container}>
             <div className={styles.header_dashboard}>
-                <p>Olá, {session?.user?.name}, essa é sua Dashboard de Forja de Anéis</p>
+                <p>Olá, {userName}, essa é sua Dashboard de Forja de Anéis</p>
                 <SignOutBtn />
             </div>      
-            <RenderUserCard ringsData={session.user} />
+            <RenderUserCard userEmail={userEmail} ringsData={ringsData.rings} />
         </div>
     )
 }
