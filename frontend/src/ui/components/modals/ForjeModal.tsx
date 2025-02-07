@@ -4,9 +4,11 @@ import styles from "./styles/modal_styles.module.css"
 import { useState } from "react"
 import { RiCloseLargeLine } from "react-icons/ri"
 import { FormNewRing } from "../forms/FormNewRing"
+import { useTranslations } from "next-intl"
 
 export const ForjeModal = ({ onClose, userEmail }: { onClose: any, userEmail: any }) => {
     const [isExiting, setIsExiting] = useState(false)
+    const tI = useTranslations("Index")
 
     return ReactDOM.createPortal(
         <div
@@ -27,7 +29,7 @@ export const ForjeModal = ({ onClose, userEmail }: { onClose: any, userEmail: an
                     }}>
                         <RiCloseLargeLine />
                     </button>
-                    <p>Forja de Anéis</p>
+                    <p> {tI("rings_forge")} </p>
                 </div>
                 <div className={styles.container_content}>
                     <FormNewRing userEmail={userEmail} />

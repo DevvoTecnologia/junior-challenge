@@ -13,12 +13,12 @@ export async function GET(request: Request, { params }: { params: Promise<{ slug
         })
 
         if (!res.ok) {
-            return new Response(JSON.stringify({ message: "No data found" }), { status: 404 });
+            return new Response(null, { status: 404 })
         }
 
         return new Response(res.body, { status: 200 })
 
     } catch (error) {
-        return new Response(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });
+        return new Response(null, { status: 500 })
     }
 }

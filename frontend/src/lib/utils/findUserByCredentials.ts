@@ -2,7 +2,6 @@
 
 export async function findUserByCredentials(email: string, password: string) {
 
-
     try {
         const res = await fetch(`${process.env.AUTH_URL}/api/login`, {
             method: "POST",

@@ -18,6 +18,7 @@ export const FormLogin = () => {
     const searchParams = useSearchParams()
     const registerState = searchParams.get("register")
     const t = useTranslations("Index")
+    const tE = useTranslations("ErrorMessages")
     const [state, formAction, isPending] = useActionState(loginAction, null)
 
     useEffect(() => {
@@ -52,7 +53,7 @@ export const FormLogin = () => {
             </label>
             {state?.success === false && (
                 <p className={styles.error_message} aria-live="assertive">
-                    {state?.message}
+                    {tE(`error_login_${state?.code}`)}
                 </p>
             )}
             <button type="submit" disabled={isPending}>

@@ -10,15 +10,15 @@ export async function loginAction(_prevState: any, formData: FormData) {
         })
 
         if (res?.error) {
-            return { success: false, message: "Dados de login incorretos." }
+            return { success: false, code: 1 }
         }
 
         return { success: true }
         
     } catch (e: any) {
         if (e.type === "CredentialsSignin") {
-            return { success: false, message: "Dados de login incorretos." }
+            return { success: false, code: 1 }
         }
-        return { success: false, message: "Ops, algum erro aconteceu!" }
+        return { success: false, code: 2 }
     }
 }

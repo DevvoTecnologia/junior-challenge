@@ -2,9 +2,42 @@
     "Configs": {
         "locale": "en"
     },
-   "Index": {
+    "Index": {
+        "Hi": "Hello",
         "rings_power": "Rings of Power",
         "forger": "Forger",
-        "carrie": "Carrier"
+        "carrie": "Bearer",
+        "no_login_register": "Don't have an account? Sign Up",
+        "register_login": "Already have an account? Log In",
+        "register_done": "Registration Successful!",
+        "do_login": "Log In",
+        "do_login_2": "Log In",
+        "do_register": "Sign Up",
+        "do_register_2": "Sign Up",
+        "password": "Password",
+        "login_error": "Error logging in",
+        "name": "Name",
+        "registering": "Registering...",
+        "loging":  "Logging in...",
+        "your_rings": "Your Rings",
+        "empty_ring": "No rings registered yet",
+        "forge_new_ring": "Forge New Ring",
+        "your_forge": "This is your Ring Forging Dashboard",
+        "confirm_destroy_ring": "Are you sure you want to destroy this ring?",
+        "ring_name": "Ring's Name ",
+        "ring_power": "Ring's Power",
+        "ring_image": "Ring's Picture",
+        "forge_ring": "Forge Ring",
+        "forging": "Forging...",
+        "select_forger": "Select a Forger",
+        "rings_forge": "Ring Forge"
+      
+    },
+    "ErrorMessages" : {
+        "error_forge": "Error forging the ring",
+        "error_connect": "Error connecting to the server. Please try again.",
+        "email_already": "Email already registered",
+        "interal_error": "Internal Error",
+        "error_login_1": "Incorrect Login Credentials"
     }
 }

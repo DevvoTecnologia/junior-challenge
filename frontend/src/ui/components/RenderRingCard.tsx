@@ -13,16 +13,22 @@ export const RenderRingCard = ({ringData}: any) => {
 
     return (
         <div className={styles.ring_container}>
-            <p> <strong>{ringData.name}</strong></p>
+            <div>
+                <p className={styles.name_ring}> <strong>{ringData.name}</strong></p>
+                <div>
+                    <p> {ringData.power} </p>
+                    <div>
+                        <p> {t("forger")}: <strong><RenderForgerName forger={ringData.forjer} /></strong> </p>
+                        <p> {t("carrie")}: <strong>{ringData.carrier}</strong> </p>
+                    </div>
+                </div>
+            </div>
             <Image 
                 src={ringData.image}
-                height={250}
-                width={260}
+                height={430}
+                width={300}
                 alt={ringData.name} 
             />
-            <p> {ringData.power} </p>
-            <p> {t("forger")}: <strong><RenderForgerName forger={ringData.forjer} /></strong> </p>
-            <p> {t("carrie")}: <strong>{ringData.carrier}</strong> </p>
         </div>
     )
 }

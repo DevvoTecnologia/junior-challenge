@@ -11,7 +11,7 @@ export const RenderForgerName = ({ forger }: { forger: string }) => {
     }
 
     const locale = tC("locale")
-    const forgerName = forgersList[forger]?.[locale] || forgersList[forger]?.["en"] || "Unknown"
+    const forgerName = forgersList[forger]?.[locale] || forgersList[forger]?.["pt"] || "Unknown"
 
     return <>{forgerName}</>
 }

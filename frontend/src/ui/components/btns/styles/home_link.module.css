@@ -1,0 +1,26 @@
+.home_link_container {
+    width: 95%;
+    max-width: var(--w-max-width);
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > a {
+        width: 80px;
+        background-color: var(--c-texts);
+        padding: 10px 20px;
+        color: var(--c-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        border-radius: 8px;
+
+        & > svg {
+            height: 20px;
+            width: 20px;
+        }
+    }
+}

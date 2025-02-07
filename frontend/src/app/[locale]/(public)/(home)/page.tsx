@@ -10,25 +10,24 @@ async function getServerSideData() {
 
   try {
       const res = await fetch(`http://${host}/api/get-rings`, {
-          cache: "no-cache"
+        method: "GET",
+        cache: "no-cache"
       })
 
       if (!res.ok) {
-          throw new Error("Failed to fetch data")
+        console.error("Error fetching server-side data:", res)
+        return null
       }
 
-      const data = await res.json()
-      return data
+      return await res.json()
       
   } catch (error) {
       console.error("Error fetching server-side data:", error)
       return null
   }
-  
 }
 
 export default async function Home() {
   const ringsData = await getServerSideData()
-
   return <HomePage ringsData={ringsData} />
 }

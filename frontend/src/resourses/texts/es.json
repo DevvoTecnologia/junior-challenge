@@ -3,8 +3,30 @@
         "locale": "es"
     },
     "Index": {
-        "rings_power": "Anéis de Poder",
+        "Hi": "Hola",
+        "rings_power": "Anillos de Poder",
         "forger": "Forjador",
-        "carrie": "Portador"
+        "carrie": "Portador",
+        "no_login_register": "¿No tienes una cuenta? Regístrate",
+        "register_login": "¿Ya tienes una cuenta? Inicia sesión",
+        "register_done": "¡Registro exitoso!",
+        "do_login": "Iniciar sesión",
+        "do_login_2": "Iniciar sesión",
+        "do_register": "Regístrate",
+        "do_register_2": "Regístrate",
+        "password": "Contraseña",
+        "login_error": "Error al iniciar sesión",
+        "name": "Nombre",
+        "registering": "Registrando...",
+        "loging":  "Iniciando sesión...",
+        "your_rings": "Tus Anillos",
+        "empty_ring": "Aún no hay anillos registrados",
+        "forge_new_ring": "Forjar Nuevo Anillo",
+        "your_forge": "Este es tu Panel de Forja de Anillos",
+        "confirm_destroy_ring": "Are you sure you want to destroy this ring?"
+    },
+    "ErrorMessages" : {
+        "error_forge": "Error al forjar el anillo",
+        "error_connect": "Error al conectar con el servidor. Inténtalo de nuevo."
     }
 }

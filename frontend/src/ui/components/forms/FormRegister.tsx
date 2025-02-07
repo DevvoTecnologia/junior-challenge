@@ -9,9 +9,13 @@ import { Link } from "@/i18n/routing"
 import { useRouter } from "@/i18n/routing"
 import { useTranslations } from "next-intl"
 
+//
+
 export const FormRegister = () => {
     const router = useRouter()
     const t = useTranslations("Index")
+    const tC = useTranslations("Configs")
+    const tE = useTranslations("ErrorMessages")
 
     const [formData, setFormData] = useState({
         name: "",
@@ -32,7 +36,7 @@ export const FormRegister = () => {
         e.preventDefault()
         setSubmitStatus(true)
         setErrorMessage("")
-
+    
         try {
             const res = await fetch("/api/register", {
                 method: "POST",
@@ -41,22 +45,20 @@ export const FormRegister = () => {
                 },
                 body: JSON.stringify(formData)
             })
-
+    
             if (!res.ok) {
-                const errorData = await res.json().catch(() => null)
-                setErrorMessage(errorData?.message || t("login_error"))
+                setErrorMessage( tE("email_already") )
                 return
             }
-
+    
             router.push({
                 pathname: "/login",
                 query: { register: "success" }
             })
-
+    
         } catch (error) {
             console.error(error)
-            setErrorMessage(t("login_error"))
-
+            setErrorMessage( tE("internal_error") )
         } finally {
             setSubmitStatus(false)
         }

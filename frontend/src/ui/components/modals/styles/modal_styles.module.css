@@ -70,6 +70,7 @@
     &>p {
         font-size: 1.5rem;
         font-weight: 600;
+        color: var(--c-texts);
     }
 
     & button {
@@ -86,6 +87,7 @@
         &>svg {
             height: 100%;
             width: 30px;
+            color: var(--c-texts);
         }
 
         &>span {
@@ -97,11 +99,19 @@
 .modal_content {
     position: absolute;
     right: 0;
-    width: 700px;
+    width: 450px;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--c-bg);
     padding: 25px;
     animation: slide-in 0.3s ease-out forwards;
+
+    & form {
+        background-color: transparent !important;
+
+        & input {
+            background-color: var(--c-gray);
+        }
+    }
 }
 
 .container_content {

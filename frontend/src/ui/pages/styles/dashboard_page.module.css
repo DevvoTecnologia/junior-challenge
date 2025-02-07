@@ -17,6 +17,7 @@
     padding: 10px;
     border-radius: 10px;
     font-weight: 600;
+    color: var(--c-texts);
 
     & button {
         padding: 8px 15px;

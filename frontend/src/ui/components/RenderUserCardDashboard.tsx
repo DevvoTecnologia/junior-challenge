@@ -2,20 +2,20 @@
 import styles from "./styles/render_user_card.module.css"
 
 //
-import { auth } from "@/auth"
 
 //
 import { NewRingBtn } from "./btns/NewRingBtn"
 import { RenderRingCard } from "./RenderRingCardDashboard"
+import { useTranslations } from "next-intl"
 
-export const RenderUserCard = async ({ ringsData, userEmail }: any) => {
-    const session = await auth()
+export const RenderUserCard = ({ userEmail, userName, ringsData }: any) => {
+    const tI = useTranslations("Index")
 
     return (
         <div className={styles.user_container}>
             <div className={styles.header_rings_container}>
-                <p>Seus Anéis</p>
-                <NewRingBtn userEmail={session?.user?.email} />
+                <p> {tI("your_rings")} </p>
+                <NewRingBtn userEmail={userEmail} />
             </div>
             <div className={styles.rings_container}>
                 {ringsData?.length > 0 ? (<>
@@ -23,7 +23,7 @@ export const RenderUserCard = async ({ ringsData, userEmail }: any) => {
                         <RenderRingCard key={ring.id} ringData={ring} userEmail={userEmail} />
                     ))}</>
                 ) : (
-                    <p>Nenhum anel cadastrado ainda</p>
+                    <p>{tI("empty_ring")}</p>
                 )}
             </div>
         </div>

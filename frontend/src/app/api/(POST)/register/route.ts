@@ -13,12 +13,13 @@ export async function POST(request: Request) {
         })
 
         if (!res.ok) {
-            return new Response(JSON.stringify({ message: "Erro ao criar usuário" }), { status: res.status })
+            return new Response(null, { status: 400 })
         }
 
         return new Response(await res.text(), { status: 200 })
-        
-    } catch (error: any) {
-        return new Response(JSON.stringify({ message: "Erro interno", error: error.toString() }), { status: 500 })
+
+    } catch (error: unknown) {
+        console.error(error)
+        return new Response(null, { status: 500 })
     }
 }

@@ -1,6 +1,10 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://backend:5000"
+import { cookies } from "next/headers"
 
 export async function POST(request: Request) {
+    const cookieStore = await cookies()
+    const locale = cookieStore.get("NEXT_LOCALE")?.value || "pt" 
+    
     try {
         const { email, name, power, carrier, forjer, image } = await request.json()
 
@@ -9,7 +13,7 @@ export async function POST(request: Request) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ email, name, power, carrier, forjer, image }),
+            body: JSON.stringify({ locale, email, name, power, carrier, forjer, image }),
         })
 
         // Captura a resposta do backend

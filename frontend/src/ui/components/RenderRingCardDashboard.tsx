@@ -13,19 +13,25 @@ export const RenderRingCard = ({ringData, userEmail}: any) => {
 
     return (
         <div className={styles.ring_container}>
-            <p> <strong>{ringData.name}</strong> </p>
-            <Image 
-                src={ringData.image}
-                height={250}
-                width={260}
-                alt={ringData.name} 
-            />
-            <p> {ringData.power} </p>
-            <p> {t("forger")}: <strong><RenderForgerName forger={ringData.forjer} /></strong> </p>
-            <p> {t("carrie")}: <strong>{ringData.carrier}</strong> </p>
             <div>
+                <p className={styles.name_ring}> <strong>{ringData.name}</strong></p>
+                <div>
+                    <p> {ringData.power} </p>
+                    <div>
+                        <p> {t("forger")}: <strong><RenderForgerName forger={ringData.forjer} /></strong> </p>
+                        <p> {t("carrie")}: <strong>{ringData.carrier}</strong> </p>
+                    </div>
+                </div>
+            </div>
+            <div className={styles.btns_container}>
                <DestroyRingBtn userEmail={userEmail} ring_id={ringData.id} />
             </div>
+            <Image 
+                src={ringData.image}
+                height={430}
+                width={300}
+                alt={ringData.name} 
+            />
         </div>
     )
 }

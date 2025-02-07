@@ -12,6 +12,9 @@ import { cookies } from "next/headers"
 import { routing } from "../../i18n/routing"
 
 //
+import { HomeLink } from "@/ui/components/btns/HomeLink"
+
+//
 import type { Metadata } from "next"
 
 type LayoutTypes = {
@@ -49,6 +52,7 @@ export default async function LocaleLayout({ children, params }: LayoutTypes) {
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <HomeLink />
       {children}
     </NextIntlClientProvider>
   )

@@ -11,6 +11,7 @@ import { getUserRings } from "./routes/getUserRings"
 import { deleteRingById } from "./routes/deleteRingByID"
 import { updateRing } from "./routes/updateRingByID"
 import { getUsersWithRings } from "./routes/getUsersWithRings"
+import { deleteAllUsers } from "./routes/deleteAllUsers"
 
 //
 dotenv.config()
@@ -94,6 +95,7 @@ app.get("/api/get-users-rings", getUsersWithRings)
 
 //DELETE
 app.delete("/api/delete-ring", deleteRingById)
+//app.delete("/api/delete-all-users", deleteAllUsers)
 
 //PUT
 app.put("/api/update-ring/:user_id/:ring_id", updateRing)
