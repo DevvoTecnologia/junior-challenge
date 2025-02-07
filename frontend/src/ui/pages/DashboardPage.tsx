@@ -16,7 +16,7 @@ export const DashBoardPage = ({userEmail, userName, ringsData}: any) => {
                 <p>{tI("Hi")}, {userName}, {tI("your_forge")}</p>
                 <SignOutBtn />
             </div>      
-            <RenderUserCard userName={userName} userEmail={userEmail} ringsData={ringsData} />
+            <RenderUserCard userEmail={userEmail} ringsData={ringsData} />
         </div>
     )
 }

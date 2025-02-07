@@ -98,7 +98,7 @@ app.delete("/api/delete-ring", deleteRingById)
 //app.delete("/api/delete-all-users", deleteAllUsers)
 
 //PUT
-app.put("/api/update-ring/:user_id/:ring_id", updateRing)
+app.put("/api/update-ring/:user_email/:ring_id", updateRing)
 
 //POST
 app.post("/api/create-user", createUser)
