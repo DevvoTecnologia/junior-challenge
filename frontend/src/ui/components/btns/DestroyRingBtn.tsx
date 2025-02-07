@@ -3,7 +3,7 @@ import { BiTrash } from "react-icons/bi"
 import { revalidateDashboard } from "@/lib/actions/revalidateDashboard"
 import { useTranslations } from "next-intl"
 
-export const DestroyRingBtn = ({ userEmail, ring_id }: { userEmail: string, ring_id: any }) => {
+export const DestroyRingBtn = ({ userEmail, ringID }: { userEmail: string, ringID: any }) => {
     const tI = useTranslations("Index")
 
     async function destroyRing() {
@@ -19,7 +19,7 @@ export const DestroyRingBtn = ({ userEmail, ring_id }: { userEmail: string, ring
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ userEmail, ring_id }),
+                body: JSON.stringify({ userEmail, ringID }),
             })
             
             await revalidateDashboard()

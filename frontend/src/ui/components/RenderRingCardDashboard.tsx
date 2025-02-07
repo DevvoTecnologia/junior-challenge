@@ -7,12 +7,13 @@ import { useTranslations } from "next-intl"
 //
 import { RenderForgerName } from "./RenderForgerName"
 import { DestroyRingBtn } from "./btns/DestroyRingBtn"
+import { EditRingBtn } from "./btns/EditRingBtn"
 
 export const RenderRingCard = ({ringData, userEmail}: any) => {
     const t = useTranslations("Index")
 
     return (
-        <div className={styles.ring_container}>
+        <div className={styles.ring_container} style={{ backgroundImage: `url(${ringData.image})` }}>
             <div>
                 <p className={styles.name_ring}> <strong>{ringData.name}</strong></p>
                 <div>
@@ -24,14 +25,9 @@ export const RenderRingCard = ({ringData, userEmail}: any) => {
                 </div>
             </div>
             <div className={styles.btns_container}>
-               <DestroyRingBtn userEmail={userEmail} ring_id={ringData.id} />
+                <EditRingBtn userEmail={userEmail} ringData={ringData} />
+                <DestroyRingBtn userEmail={userEmail} ringID={ringData.id} />
             </div>
-            <Image 
-                src={ringData.image}
-                height={430}
-                width={300}
-                alt={ringData.name} 
-            />
         </div>
     )
 }

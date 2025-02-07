@@ -30,7 +30,9 @@
         "forge_ring": "Forge Ring",
         "forging": "Forging...",
         "select_forger": "Select a Forger",
-        "rings_forge": "Ring Forge"
+        "rings_forge": "Ring Forge",
+        "re_forge_ring": "Reforge Ring",
+        "re_forging": "Reforging..."
       
     },
     "ErrorMessages" : {

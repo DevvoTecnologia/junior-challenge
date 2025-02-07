@@ -3,10 +3,9 @@ import ReactDOM from "react-dom"
 import styles from "./styles/modal_styles.module.css"
 import { useState } from "react"
 import { RiCloseLargeLine } from "react-icons/ri"
-import { FormNewRing } from "../forms/FormNewRing"
 import { useTranslations } from "next-intl"
 
-export const ForjeModal = ({ onClose, userEmail }: { onClose: any, userEmail: any }) => {
+export const ForjeModal = ({ onClose, children }: { onClose: any, children: React.ReactNode }) => {
     const [isExiting, setIsExiting] = useState(false)
     const tI = useTranslations("Index")
 
@@ -32,7 +31,7 @@ export const ForjeModal = ({ onClose, userEmail }: { onClose: any, userEmail: an
                     <p> {tI("rings_forge")} </p>
                 </div>
                 <div className={styles.container_content}>
-                    <FormNewRing userEmail={userEmail} />
+                    {children}
                 </div>
             </div>
         </div>,

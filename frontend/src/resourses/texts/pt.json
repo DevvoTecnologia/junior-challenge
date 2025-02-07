@@ -30,7 +30,10 @@
         "forge_ring": "Forjar Anel",
         "forging": "Forjando...",
         "select_forger": "Selecione um Forjador",
-        "rings_forge": "Forja de Anéis"
+        "rings_forge": "Forja de Anéis",
+        "re_forge_ring": "Reforjar Anel",
+        "re_forging": "Reforjando..."
+
     },
     "ErrorMessages" : {
         "error_forge": "Erro ao Forjar o Anel",

@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { ForjeModal } from "../modals/ForjeModal"
 import { useTranslations } from "next-intl"
+import { FormNewRing } from "@/ui/components/forms/FormNewRing"
 
 export const NewRingBtn = ({userEmail}: any) => {
     const tI = useTranslations("Index")
@@ -14,6 +15,6 @@ export const NewRingBtn = ({userEmail}: any) => {
 
     return (<>
         <button onClick={changeStateForje}> {tI("forge_new_ring")} </button>
-        {isModalOpen && <ForjeModal userEmail={userEmail} onClose={changeStateForje} />}
+        {isModalOpen && <ForjeModal onClose={changeStateForje}> <FormNewRing userEmail={userEmail} /> </ForjeModal>}
     </>)
 }
