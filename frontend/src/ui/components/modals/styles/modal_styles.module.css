@@ -109,7 +109,7 @@
         background-color: transparent !important;
 
         & input {
-            background-color: var(--c-gray);
+            background-color: var(--c-gray) !important;
         }
     }
 }
