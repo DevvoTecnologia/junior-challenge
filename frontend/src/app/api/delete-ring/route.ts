@@ -1,7 +1,7 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://backend:5000"
 
 export async function DELETE(request: Request) {
-    const { userEmail, ring_id } = await request.json()
+    const { userEmail, ringID } = await request.json()
 
     try {
         const res = await fetch(`${API_URL}/api/delete-ring`, {
@@ -11,7 +11,7 @@ export async function DELETE(request: Request) {
             },
             body: JSON.stringify({ 
                 user_email: userEmail,
-                ring_id 
+                ring_id: ringID
             }),
         })
 
