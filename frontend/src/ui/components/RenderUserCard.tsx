@@ -55,7 +55,7 @@ export const RenderUserCard = ({ userEmail, userName, ringsData, isDashboard }: 
     return (
         <div className={styles.user_container}>
             <div className={styles.header_rings_container}>
-                { isDashboard ? tI("your_rings") : userName }
+                <p>{ isDashboard ? tI("your_rings") : userName }</p>
                 {isDashboard && userEmail && (
                     <NewRingBtn userEmail={userEmail} />
                 )}

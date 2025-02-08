@@ -11,13 +11,6 @@
     gap: 30px;
     overflow: hidden;
 
-    & p {
-        font-weight: 600;
-        font-size: 1.2rem;
-        color: var(--c-texts);
-
-    }
-
     & .rings_container {
         width: 100%;
         display: flex;
@@ -42,6 +35,12 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+
+    & p {
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: var(--c-texts);
+    }
     
     & button {
         padding: 8px 15px;
