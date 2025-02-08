@@ -1,4 +1,5 @@
 .form {
+    scrollbar-width: 0;
     width: 400px;
     background-color: var(--c-gray);
     padding: 20px;
@@ -9,6 +10,10 @@
     gap: 30px;
     overflow-y: scroll;
     position: relative;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     & .forge_gif {
         height: 100%;
