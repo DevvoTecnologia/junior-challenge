@@ -6,3 +6,5 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     rings JSONB DEFAULT '[]'::JSONB
 );
+
+SELECT pg_sleep(2);

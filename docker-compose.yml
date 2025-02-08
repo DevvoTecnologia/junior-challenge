@@ -30,15 +30,15 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: mydatabase
     volumes:
-      - ./database:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
       - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - backend-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d mydatabase || exit 1"]
       interval: 5s
-      timeout: 10s
-      retries: 5
+      timeout: 15s
+      retries: 15
 
 volumes:
   postgres_data:
