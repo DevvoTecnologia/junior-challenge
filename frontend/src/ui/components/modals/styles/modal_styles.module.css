@@ -104,7 +104,8 @@
     background-color: var(--c-bg);
     padding: 25px;
     animation: slide-in 0.3s ease-out forwards;
-
+    overflow-y: auto;
+    
     & form {
         background-color: transparent !important;
 
