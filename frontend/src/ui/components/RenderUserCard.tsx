@@ -2,13 +2,17 @@
 
 //
 import styles from "./styles/render_user_card.module.css"
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai"
+
+//
+import { useEffect, useRef, useState } from "react"
+import { useTranslations } from "next-intl"
 
 //
 import { RenderRingCard } from "./RenderRingCard"
-import { useEffect, useRef, useState } from "react"
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai"
-import { useTranslations } from "next-intl"
+import { NewRingBtn } from "./btns/NewRingBtn"
 
+//
 type RenderUserCardTypes = {
     userEmail?: string
     userName?: string
@@ -50,7 +54,12 @@ export const RenderUserCard = ({ userEmail, userName, ringsData, isDashboard }: 
 
     return (
         <div className={styles.user_container}>
-            <p> { isDashboard ? tI("your_rings") : userName } </p>
+            <div className={styles.header_rings_container}>
+                { isDashboard ? tI("your_rings") : userName }
+                {isDashboard && userEmail && (
+                    <NewRingBtn userEmail={userEmail} />
+                )}
+            </div>
             <div className={styles.rings_container}>
                 {ringsData.map((ring: any) => (
                     <RenderRingCard key={ring.id} ringData={ring} isDashboard={isDashboard} userEmail={userEmail} />
