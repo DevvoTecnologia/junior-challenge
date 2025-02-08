@@ -35,12 +35,6 @@ out/
 .env.development
 .env.production
 
-# Banco de dados local e arquivos de cache
-database/
-*.sqlite
-*.db
-dump.sql
-
 # Docker
 docker-compose.override.yml
 .dockerignore
