@@ -61,11 +61,11 @@ export const RenderUserCard = ({ userEmail, userName, ringsData, isDashboard }: 
                 )}
             </div>
             <div className={styles.rings_container}>
-                {ringsData.lenght > 0 ? (<>
+                {ringsData && ringsData.length > 0 ? (<>
                     {ringsData.map((ring: any) => (
                         <RenderRingCard key={ring.id} ringData={ring} isDashboard={isDashboard} userEmail={userEmail} />
-                    ))}
-                </>) : (
+                    ))}</>
+                ) : (
                     <p className={styles.empty}>
                         {tI("empty_ring")}
                     </p>

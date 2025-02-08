@@ -24,7 +24,7 @@ export const HomePage = ({ ringsData }: HomePageTypes) => {
                 </h1>
                 <LoginOptions />
             </div>
-            {ringsData.length > 0 ? (<>
+            {ringsData && ringsData.length > 0 ? (<>
                 {ringsData.map((user: any, index: number) => (<>
                     {user.rings.length > 0 ? (
                         <RenderUserCard key={user.name + index} userName={user.name} ringsData={user.rings} isDashboard={false}  />
