@@ -12,6 +12,8 @@ frontend/dist/
 frontend/.next/
 backend/dist/
 
+database/
+
 # Arquivos de configuração do editor
 .vscode/
 .idea/
