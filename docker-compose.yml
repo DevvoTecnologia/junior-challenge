@@ -19,7 +19,7 @@ services:
       - backend-network
 
   db:
-    image: postgres:latest
+    image: postgres:17
     restart: always
     container_name: my_postgres_db
     ports:
@@ -30,6 +30,7 @@ services:
       POSTGRES_DB: mydatabase
     volumes:
       - ./database:/var/lib/postgresql/data
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - backend-network
 
