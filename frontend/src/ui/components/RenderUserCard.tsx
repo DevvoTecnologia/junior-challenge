@@ -55,15 +55,21 @@ export const RenderUserCard = ({ userEmail, userName, ringsData, isDashboard }: 
     return (
         <div className={styles.user_container}>
             <div className={styles.header_rings_container}>
-                <p>{ isDashboard ? tI("your_rings") : userName }</p>
+                <p>{isDashboard ? tI("your_rings") : userName}</p>
                 {isDashboard && userEmail && (
                     <NewRingBtn userEmail={userEmail} />
                 )}
             </div>
             <div className={styles.rings_container}>
-                {ringsData.map((ring: any) => (
-                    <RenderRingCard key={ring.id} ringData={ring} isDashboard={isDashboard} userEmail={userEmail} />
-                ))}
+                {ringsData.lenght > 0 ? (<>
+                    {ringsData.map((ring: any) => (
+                        <RenderRingCard key={ring.id} ringData={ring} isDashboard={isDashboard} userEmail={userEmail} />
+                    ))}
+                </>) : (
+                    <p className={styles.empty}>
+                        {tI("empty_ring")}
+                    </p>
+                )}
             </div>
             <div className={styles.navigate_btns_box}>
                 <button onClick={handlePrevClick}> <AiOutlineArrowLeft /> </button>
