@@ -6,8 +6,16 @@ import { useTranslations } from "next-intl"
 
 //
 import { RenderForgerName } from "./RenderForgerName"
+import { EditRingBtn } from "./btns/EditRingBtn"
+import { DestroyRingBtn } from "./btns/DestroyRingBtn"
 
-export const RenderRingCard = ({ringData}: any) => {
+type RenderRingCardTypes = {
+    userEmail?: string
+    ringData: any
+    isDashboard: boolean
+}
+
+export const RenderRingCard = ({ ringData, userEmail, isDashboard }: RenderRingCardTypes) => {
     const t = useTranslations("Index")
 
     return (
@@ -22,6 +30,12 @@ export const RenderRingCard = ({ringData}: any) => {
                     </div>
                 </div>
             </div>
+            {isDashboard && userEmail && (
+                <div className={styles.btns_container}>
+                    <EditRingBtn userEmail={userEmail} ringData={ringData} />
+                    <DestroyRingBtn userEmail={userEmail} ringID={ringData.id} />
+                </div>
+            )}
         </div>
     )
 }

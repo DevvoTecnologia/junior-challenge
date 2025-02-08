@@ -2,7 +2,7 @@
 import styles from "./styles/dashboard_page.module.css"
 //
 import { SignOutBtn } from "@/ui/components/btns/SignOutBtn"
-import { RenderUserCard } from "../components/RenderUserCardDashboard"
+import { RenderUserCard } from "../components/RenderUserCard"
 
 //
 import { useTranslations } from "next-intl"
@@ -16,7 +16,7 @@ export const DashBoardPage = ({userEmail, userName, ringsData}: any) => {
                 <p>{tI("Hi")}, {userName}, {tI("your_forge")}</p>
                 <SignOutBtn />
             </div>      
-            <RenderUserCard userEmail={userEmail} ringsData={ringsData} />
+            <RenderUserCard userEmail={userEmail} ringsData={ringsData} isDashboard={true} />
         </div>
     )
 }

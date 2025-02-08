@@ -7,8 +7,17 @@ import styles from "./styles/render_user_card.module.css"
 import { RenderRingCard } from "./RenderRingCard"
 import { useEffect, useRef, useState } from "react"
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai"
+import { useTranslations } from "next-intl"
 
-export const RenderUserCard = ({userData}: any) => {
+type RenderUserCardTypes = {
+    userEmail?: string
+    userName?: string
+    ringsData: any
+    isDashboard: boolean
+}
+
+export const RenderUserCard = ({ userEmail, userName, ringsData, isDashboard }: RenderUserCardTypes) => {
+    const tI = useTranslations("Index")
     const containerRef = useRef<HTMLDivElement | null>(null)
     const [containerWidth, setContainerWidth] = useState<number>(0)
 
@@ -41,10 +50,10 @@ export const RenderUserCard = ({userData}: any) => {
 
     return (
         <div className={styles.user_container}>
-            <p>{userData.name}</p>
+            <p> { isDashboard ? tI("your_rings") : userName } </p>
             <div className={styles.rings_container}>
-                {userData.rings.map((ring: any) => (
-                    <RenderRingCard key={ring.id} ringData={ring} />
+                {ringsData.map((ring: any) => (
+                    <RenderRingCard key={ring.id} ringData={ring} isDashboard={isDashboard} userEmail={userEmail} />
                 ))}
             </div>
             <div className={styles.navigate_btns_box}>

@@ -14,21 +14,26 @@ type HomePageTypes = {
 }
 
 export const HomePage = ({ ringsData }: HomePageTypes) => {
-    const t = useTranslations("Index")
+    const tI = useTranslations("Index")
+
     return (
         <div className={styles.home_container}>
             <div className={styles.header_container}>
-                <h1 className={styles.title}>{t("rings_power")}</h1>
+                <h1 className={styles.title}>
+                    {tI("rings_power")}
+                </h1>
                 <LoginOptions />
             </div>
             {ringsData.length > 0 ? (<>
                 {ringsData.map((user: any, index: number) => (<>
                     {user.rings.length > 0 ? (
-                        <RenderUserCard userData={user} key={user.name + index} />
+                        <RenderUserCard key={user.name + index} userName={user.name} ringsData={user.rings} isDashboard={false}  />
                     ) : ""}
                 </>))}
             </>) : (
-                <p className={styles.empty}>Nenhum Anel Cadastrado.</p>
+                <p className={styles.empty}>
+                    {tI("empty_ring")}
+                </p>
             )}
         </div>
     )
