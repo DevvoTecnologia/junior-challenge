@@ -15,6 +15,8 @@ Este projeto consiste em uma aplicação full-stack composta por um backend em *
    ```sh
    docker-compose up --build
    ```
+## use o comando: docker exec -i my_postgres_db psql -U postgres -d mydatabase < backup.sql
+
 3. O backend e frontend serão iniciados automaticamente.
 4. Acesse:
    - **Frontend:** http://localhost:3000
