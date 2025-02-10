@@ -1,0 +1,45 @@
+{
+    "Configs": {
+        "locale": "pt"
+    },
+    "Index": {
+        "Hi": "Olá",
+        "rings_power": "Anéis de Poder",
+        "forger": "Forjador",
+        "carrie": "Portador",
+        "no_login_register": "Não possui uma conta? Faça seu Cadastro",
+        "register_login": "Já possui uma conta? Faça Login",
+        "register_done": "Cadastro Feito com Sucesso!",
+        "do_login": "Faça Login",
+        "do_login_2": "Fazer Login",
+        "do_register": "Crie seu cadastro",
+        "do_register_2": "Crie seu cadastro",
+        "password": "Senha",
+        "login_error": "Erro ao Fazer login",
+        "name": "Nome",
+        "registering": "Realizando Cadastro...",
+        "loging":  "Realizando Login...",
+        "your_rings": "Seus Anéis",
+        "empty_ring": "Nenhum anel cadastrado ainda",
+        "forge_new_ring": "Forjar Novo Anel",
+        "your_forge": "essa é sua Dashboard de Forja de Anéis",
+        "confirm_destroy_ring": "Tem certeza que deseja destruir esse anel?",
+        "ring_name": "Nome do Anel",
+        "ring_power": "Poder do Anel",
+        "ring_image": "Imagem do Anel",
+        "forge_ring": "Forjar Anel",
+        "forging": "Forjando...",
+        "select_forger": "Selecione um Forjador",
+        "rings_forge": "Forja de Anéis",
+        "re_forge_ring": "Reforjar Anel",
+        "re_forging": "Reforjando..."
+
+    },
+    "ErrorMessages" : {
+        "error_forge": "Erro ao Forjar o Anel",
+        "error_connect": "Erro ao conectar ao servidor. Tente novamente.",
+        "email_already": "Email já cadastrado",
+        "interal_error": "Erro Interno",
+        "error_login_1": "Dados de Login Incorretos"
+    }   
+}

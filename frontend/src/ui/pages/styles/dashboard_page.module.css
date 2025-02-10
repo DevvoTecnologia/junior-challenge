@@ -1,0 +1,30 @@
+.dashboard_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    gap: 50px;
+}
+
+.header_dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    max-width: var(--w-max-width);
+    background-color: var(--c-gray);
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: var(--c-texts);
+
+    & button {
+        padding: 8px 15px;
+        border: none;
+        background-color: var(--c-texts);
+        color: var(--c-bg);
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}

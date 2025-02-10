@@ -1,0 +1,40 @@
+# Dependências do Frontend e Backend
+frontend/node_modules/
+backend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.next/
+backend/dist/
+database
+
+# Arquivos de configuração do editor
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Logs e temporários
+logs/
+*.log
+*.pid
+*.seed
+*.state
+tmp/
+out/
+*.cache
+
+# Ambientes
+.env
+.env.local
+.env.development
+.env.production
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Git
+.git/

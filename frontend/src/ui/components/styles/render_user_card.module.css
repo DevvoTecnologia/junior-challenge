@@ -1,0 +1,73 @@
+.user_container {
+    background-color: var(--c-gray);
+    width: 95%;
+    max-width: var(--w-max-width);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    overflow: hidden;
+
+    & .rings_container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-x: scroll;
+        gap: 15px;
+        scroll-behavior: smooth;
+
+    }
+
+    & .rings_container::-webkit-scrollbar {
+        display: none;
+    } 
+}
+
+.user_container::-webkit-scrollbar {
+    display: none;
+} 
+
+.header_rings_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    & p {
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: var(--c-texts);
+    }
+    
+    & button {
+        padding: 8px 15px;
+        border: none;
+        background-color: var(--c-texts);
+        color: var(--c-bg);
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}
+
+.navigate_btns_box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    & button {
+        background-color: transparent;
+        border: none;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+
+        & svg {
+            height: 100%;
+            width: 100%;
+            color: var(--c-texts);
+        }
+    }
+}
